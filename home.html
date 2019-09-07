@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Overpass Sample  Demo app</h1>
+            <strong>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </nav>
+            </strong>
+        </div>
+        <form id="rendered-form">
+            <div class="rendered-form">
+                <div class="fb-select form-group field-country"><label for="country" class="fb-select-label">Country</label><select class="form-control" name="country" id="country">
+                        <option value="option-1" selected="true" id="country-0">Option 1</option>
+                        <option value="option-3" id="country-1">Option 3</option>
+                    </select></div>
+                <div class="fb-button form-group field-states"><button type="button" class="btn-info btn" name="states" style="info" id="states">Get States</button></div>
+                <div class="fb-select form-group field-states"><label for="states" class="fb-select-label">States</label><select class="form-control" name="states" id="states">
+                        <option value="option-1" selected="true" id="states-0">Option 1</option>
+                        <option value="option-2" id="states-1">Option 2</option>
+                    </select></div>
+                <div class="fb-button form-group field-cities"><button type="button" class="btn-info btn" name="cities" style="info" id="cities">Get Cities</button></div>
+                <div class="fb-select form-group field-city"><label for="city" class="fb-select-label">City</label><select class="form-control" name="city" id="city">
+                        <option value="option-1" selected="true" id="city-0">Option 1</option>
+                        <option value="option-2" id="city-1">Option 2</option>
+                        <option value="option-3" id="city-2">Option 3</option>
+                    </select></div>
+                <div class="fb-button form-group field-areas"><button type="button" class="btn-info btn" name="areas" style="info" id="areas">Get Areas</button></div>
+                <div class="fb-select form-group field-area"><label for="area" class="fb-select-label">Area</label><select class="form-control" name="area" id="area">
+                        <option value="option-1" selected="true" id="area-0">Option 1</option>
+                        <option value="option-2" id="area-1">Option 2</option>
+                        <option value="option-3" id="area-2">Option 3</option>
+                    </select></div>
+                <div class="fb-text form-group field-query"><label for="query" class="fb-text-label">Query Term<span class="tooltip-element" tooltip="Entry Query term ex. Hospital">?</span></label><input type="text" class="form-control" name="query" id="query" title="Entry Query term ex. Hospital"></div>
+                <div class="fb-button form-group field-download"><button type="button" class="btn-default btn" name="download" style="default" id="download">Download Result</button></div>
+            </div>
+        </form>
+    </header>
+</body>
+
+</html>

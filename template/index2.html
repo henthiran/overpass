@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overpass app Application</title>
+
+</head>
+
+<body>
+
+
+<script type="text/javascript">
+
+
+                function myfunSt() {
+
+                    var e = document.getElementById("countries");
+                    var country = e.options[e.selectedIndex].value;
+                    var url = "states/" + country;
+                    location.href = url ;
+
+                };
+
+</script>
+
+<script type="text/javascript">
+
+
+                function myfunCt() {
+
+                    var e = document.getElementById("statesE");
+                    var country = e.options[e.selectedIndex].value;
+                    var url = "cities/" + country;
+                    location.href = url ;
+
+                };
+
+</script>
+
+
+<script type="text/javascript">
+
+
+                function downloadQ() {
+
+                    var e = document.getElementById("cityE");
+                    var city = e.options[e.selectedIndex].value;
+                    var eq = document.getElementById("amtyE");
+                    var eq_val = eq.options[e.selectedIndex].value;
+                    var query_t = city + "||" + eq_val
+
+                    var url = "city/" + query_t;
+                    location.href = url ;
+
+                };
+
+</script>
+
+
+<div class="jumbotron">
+    <h1>  Application </h1>
+   
+</div>
+
+
+
+
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>  </p>
+        </footer>
+    </div>
+
+
+
+<div>
+        <form id="rendered-form">
+            <div class="rendered-form">
+                <br><br><br>
+                <div class="fb-select form-group field-country"><label for="country" class="fb-select-label">Country</label><select class="form-control" name="country" id="countries">
+
+                        {% for ct in cnt %}
+                        <option value="{{ ct.iso }}"  name="{{ ct.iso }}" selected="true" id="country-0"> {{ ct.co }} </option>
+                        {% endfor %}
+                    </select></div>
+
+                <br><br><br>
+
+                <div ><button  onclick="myfunSt()" type="button" class="btn-info btn" name="states"  id="states">Get States</button></div>
+
+                <br><br><br>
+
+                <div class="fb-select form-group field-states"><label for="states" class="fb-select-label">States</label><select class="form-control" name="states" id="statesE">
+
+                        {% for state in states %}
+                        <option value="{{ state.name }}"  id="{{ state.name }}">{{ state.name }}</option>
+                        {% endfor %}
+                        
+                    </select></div>
+
+                <br><br><br>
+                <div class="fb-button form-group field-cities"><button type="button" class="btn-info btn" onclick="myfunCt()" name="cities" style="info" id="cities">Get Cities</button></div>
+
+                <br><br><br>
+                <div class="fb-select form-group field-city"><label for="city" class="fb-select-label">City</label><select class="form-control" name="city" id="cityE">
+                        {% for city in cities %}
+                        <option value="{{ city.name }}"  id="{{ city.name }}">{{ city.name }}</option>
+                        {% endfor %}
+                        
+                    </select></div>
+
+
+
+                <br><br><br>
+                <p> Search amenity </p>
+                <br>
+                <div class="fb-select form-group field-city"><label for="city" class="fb-select-label">City</label><select class="form-control" name="amenity" id="amtyE">
+                        {% for amty in amenities %}
+                        <option value="{{ amty }}"  id="{{ amty }}">{{ amty}}</option>
+                        {% endfor %}
+                        
+                    </select></div>
+
+
+
+
+                <br><br><br>
+                <div class="fb-button form-group field-download"><button type="button" onclick="downloadQ()" id="download">Download Result</button></div>
+            </div>
+        </form>
+
+</div>
+
+
+
+
+</body>
+</html>
+
